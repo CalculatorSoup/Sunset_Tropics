@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -794597441, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: tropics_wormsworms
+  m_EditorClassIdentifier: 
+  sceneAddress:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  baseSceneNameOverride: tropics_wormsworms
+  sceneType: 1
+  isOfflineScene: 0
+  stageOrder: 4
+  requiredExpansion: {fileID: 0}
+  nameToken: WORM_TROPICS_NAME
+  subtitleToken: WORM_TROPICS_SUBTITLE
+  previewTexture: {fileID: 2800000, guid: b7669d6288e04934c997391d8d6c74d1, type: 3}
+  previewTextureReference:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  portalMaterial: {fileID: 0}
+  portalMaterialReference:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  portalSelectionMessageString: WORM_BAZAAR_SEER_TROPICS
+  filterOutOfBazaar: 0
+  shouldIncludeInLogbook: 1
+  loreToken: WORM_TROPICS_LORE
+  dioramaPrefab: {fileID: 919132149155446097, guid: 79a3ce94d740fad49a976cac362af816, type: 3}
+  dioramaPrefabAddress:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+  mainTrack: {fileID: 0}
+  bossTrack: {fileID: 0}
+  environmentColor: {r: 0.2031417, g: 0.7830189, b: 0.7659863, a: 0}
+  hasSafeStart: 0
+  suppressPlayerEntry: 0
+  suppressNpcEntry: 0
+  blockOrbitalSkills: 0
+  validForRandomSelection: 1
+  allowItemsToSpawnObjects: 0
+  preventStageAdvanceCounter: 0
+  needSkipDevotionRespawn: 0
+  destinationsGroup: {fileID: 0}
+  loopedDestinationsGroup: {fileID: 0}
+  shouldUpdateSceneCollectionAfterLooping: 1
+  isLockedBeforeLooping: 0
+  loopedSceneDef: {fileID: 0}
+  destinations: []
+  preferredPortalPrefab: {fileID: 0}
+  portalPrefabAddress:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
