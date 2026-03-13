@@ -30,7 +30,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StagingPaths:
   - <MSUBuildPath>
-  url: https://github.com/CalculatorSoup/Wetland_Downpour
+  url: https://github.com/CalculatorSoup/Sunset_Tropics
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,9 +86,8 @@ MonoBehaviour:
   Author: wormsworms
   Name: Sunset_Tropics
   Description: An alternate Stage 4 map set on a tropical archipelago littered with
-    comically large sea shells (configurable (the map, not the sea shells)). Also
-    includes a loop variant and a Simulacrum variant!
-  Version: 1.0.0
+    comically large sea shells. Also includes a loop variant and a Simulacrum variant!
+  Version: 1.0.1
   Dependencies:
   - {fileID: 11400000, guid: d7d8ed5ac59df8acbbc4983f1ebba079, type: 2}
   - {fileID: 11400000, guid: 98480314448d120c05e373472456e52b, type: 2}

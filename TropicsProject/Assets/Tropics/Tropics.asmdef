@@ -37,7 +37,10 @@
         "R2API.Addressables.dll",
         "R2API.Sound.dll",
         "MMHOOK_RoR2.dll",
-        "ShaderSwapper.dll"
+        "ShaderSwapper.dll",
+        "Starstorm2.dll",
+        "EnemiesReturns.dll",
+        "MSU.Runtime.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

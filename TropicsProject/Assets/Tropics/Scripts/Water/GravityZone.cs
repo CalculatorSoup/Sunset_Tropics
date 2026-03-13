@@ -16,9 +16,12 @@ public class GravityZone : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         CharacterBody body = other.GetComponent<CharacterBody>();
-        if ((bool)body && (bool)body.characterMotor && !characterBodies.Contains(body) && body.characterMotor.useGravity && body.characterMotor.hasEffectiveAuthority)
+        if ((bool)body && !characterBodies.Contains(body) && body.characterMotor != null)
         {
-            characterBodies.Add(body);
+            if (body.characterMotor.useGravity && body.characterMotor.hasEffectiveAuthority)
+            {
+                characterBodies.Add(body);
+            }
         }
     }
 
@@ -37,14 +40,10 @@ public class GravityZone : MonoBehaviour
     {
         foreach (CharacterBody body in characterBodies)
         {
-
-            CharacterMotor characterMotor = body.GetComponent<CharacterMotor>();
-
-            if (characterMotor && !characterMotor.isGrounded && characterBodies.Contains(body))
+            if (!body.characterMotor.isGrounded && characterBodies.Contains(body))
             {
-                characterMotor.velocity.y += -Physics.gravity.y * gravityCoefficient * Time.fixedDeltaTime;
+                body.characterMotor.velocity.y += -Physics.gravity.y * gravityCoefficient * Time.fixedDeltaTime;
             }
         }
     }
-
 }

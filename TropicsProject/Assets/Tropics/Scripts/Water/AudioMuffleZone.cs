@@ -27,11 +27,10 @@ namespace Tropics.Content
         //Instead, get the collider's bounds, then return whether the given position is inside the bounds
         public static bool IsInsideCollider(Collider collider, Vector3 position)
         {
-            var bounds = collider.bounds;
-            return bounds.Contains(position);
+            return collider.bounds.Contains(position);
         }
 
-        //muffle music on a camera if the player object's CharacterBody component is in the player list. I stole most of this from Fogbound Lagoon's water muffling script. tee hee
+        //muffle music on a camera if the player object's CharacterBody component is in the player list
         private void MusicController_RecalculateHealth(On.RoR2.MusicController.orig_RecalculateHealth orig, RoR2.MusicController self, GameObject playerObject)
         {
             orig(self, playerObject);

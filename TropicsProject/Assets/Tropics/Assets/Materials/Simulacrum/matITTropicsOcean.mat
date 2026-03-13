@@ -18,7 +18,6 @@ Material:
   - _FOAM_ON
   - _NORMALMAP
   - _REFLECTIONTYPE_NONE
-  - _WORLDSPACE_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -118,7 +117,7 @@ Material:
     - _Steepness: 0.54
     - _Tess: 1
     - _UVSec: 0
-    - _WorldSpace: 1
+    - _WorldSpace: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0, g: 1, b: 0.9910369, a: 1}

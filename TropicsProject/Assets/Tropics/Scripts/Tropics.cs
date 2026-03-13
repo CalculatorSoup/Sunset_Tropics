@@ -1,6 +1,7 @@
 using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;
+using FSCStage;
 using HG;
 using IL.RoR2;
 using On.RoR2;
@@ -29,7 +30,7 @@ using UnityEngine.Diagnostics;
 using UnityEngine.Networking;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
-//Copied from a private Unity project I use for testing maps copied from Ancient Observatory copied from Wetland Downpour copied from Fogbound Lagoon copied from Nuketown
+//Copied from Hollow Summit copied from a private Unity project I use for testing maps copied from Ancient Observatory copied from Wetland Downpour copied from Fogbound Lagoon copied from Nuketown
 
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -46,7 +47,7 @@ namespace Tropics
 
         public const string Name = "Sunset_Tropics";
 
-        public const string Version = "1.0.0";
+        public const string Version = "1.0.1";
 
         public const string GUID = Author + "." + Name;
 
@@ -70,6 +71,8 @@ namespace Tropics
         public static ConfigEntry<bool> toggleSandCrabs;
         public static ConfigEntry<bool> toggleLynxTotems;
         public static ConfigEntry<bool> toggleColossus;
+        public static ConfigEntry<bool> toggleArcherBugReturns;
+        public static ConfigEntry<bool> toggleArcherBug;
 
         private void Awake()
         {
@@ -89,7 +92,7 @@ namespace Tropics
 
             RoR2.Run.onRunStartGlobal += InitializeBazaarSeerValues;
 
-            //On.RoR2.Run.PickNextStageScene += SwapBazaarFilters;
+            On.RoR2.Run.PickNextStageScene += SwapBazaarFilters;
 
         }
 
@@ -117,11 +120,13 @@ namespace Tropics
                 var newmusic = Addressables.LoadAssetAsync<RoR2.MusicTrackDef>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_DLC3.muGameplayDLC3_02_P_Map_asset).WaitForCompletion();
                 RoR2.SceneCatalog.GetSceneDefFromSceneName(RegularSceneName).mainTrack = newmusic;
                 RoR2.SceneCatalog.GetSceneDefFromSceneName(LoopSceneName).mainTrack = newmusic;
+                RoR2.SceneCatalog.GetSceneDefFromSceneName(SimuSceneName).mainTrack = newmusic;
             } else
             {
                 var regularmusic = Addressables.LoadAssetAsync<RoR2.MusicTrackDef>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_Base_Common_MusicTrackDefs.muFULLSong02_asset).WaitForCompletion();
                 RoR2.SceneCatalog.GetSceneDefFromSceneName(RegularSceneName).mainTrack = regularmusic;
                 RoR2.SceneCatalog.GetSceneDefFromSceneName(LoopSceneName).mainTrack = regularmusic;
+                RoR2.SceneCatalog.GetSceneDefFromSceneName(SimuSceneName).mainTrack = regularmusic;
             }
 
         }
@@ -157,7 +162,11 @@ namespace Tropics
         {
             if (IsEnemiesReturns.enabled)
             {
-                //EnemiesReturnsCompat.AddEnemies(); //Lynx Totem
+                EnemiesReturnsCompat.AddEnemies(); //Sand Crab, Lynx Totem, Colossus
+            }
+            if (IsStarstorm2.enabled)
+            {
+                Starstorm2Compat.AddEnemies(); //Archer Bug
             }
         }
 
@@ -181,7 +190,7 @@ namespace Tropics
         {
             if (newScene.name == RegularSceneName || newScene.name == LoopSceneName || newScene.name == SimuSceneName)
             {
-                //swap legendary chests to a different prefab that scales price with time
+                //swap legendary chests to a custom prefab that scales price with time
                 GameObject[] chestObjects = {
                     GameObject.Find("Gold Chest 1/GoldChest(Clone)"),
                     GameObject.Find("Gold Chest 2/GoldChest(Clone)"),
@@ -200,21 +209,14 @@ namespace Tropics
                 {
                     GameObject chest = chestObjects[i];
                     GameObject chestHolder = chestHolders[i];
-                    GameObject newChest = UnityEngine.GameObject.Instantiate(scalingChestPrefab, chest.transform.position, chest.transform.rotation, chestHolder.transform);
-                    NetworkServer.Spawn(newChest);
-                    GameObject.Destroy(chest);
-                }
-
-                /*
-                Transform ruinsHolder = GameObject.Find("Ruins n Stuff").transform;
-                for (int i = 0; i < ruinsHolder.childCount; i++)
-                {
-                    if (ruinsHolder.GetChild(i).gameObject.name.Contains("Xi Construct"))
+                    if (chest != null)
                     {
-                        ruinsHolder.GetChild(i).GetChild(0).GetChild(1).gameObject.SetActive(false); // disabling point lights attached to fallen xi constructs
+                        GameObject newChest = UnityEngine.GameObject.Instantiate(scalingChestPrefab, chest.transform.position, chest.transform.rotation, chestHolder.transform);
+                        NetworkServer.Spawn(newChest);
+                        GameObject.Destroy(chest);
                     }
                 }
-                */
+
             }
         }
 
@@ -283,6 +285,16 @@ namespace Tropics
                                        "Enable Colossus",
                                        true,
                                        "If true, Colossi can appear in Sunset Tropics and Midnight Tropics.");
+            toggleArcherBugReturns =
+                base.Config.Bind<bool>("03 - Modded Enemies - EnemiesReturns",
+                                       "Enable Archer Bugs",
+                                       false,
+                                       "If true, Archer Bugs can appear in Sunset Tropics and Midnight Tropics.");
+            toggleArcherBug =
+                base.Config.Bind<bool>("04 - Modded Enemies - Starstorm 2",
+                                        "Enable Archer Bugs",
+                                        true,
+                                        "If true, Archer Bugs can appear in Sunset Tropics and Midnight Tropics.");
         }
 
 

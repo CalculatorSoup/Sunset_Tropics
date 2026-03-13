@@ -88,7 +88,7 @@ namespace Tropics.Content
             }));
 
             TropicsSceneDef.portalMaterial = R2API.StageRegistration.MakeBazaarSeerMaterial((Texture2D)TropicsSceneDef.previewTexture);
-            LoopSceneDef.portalMaterial = R2API.StageRegistration.MakeBazaarSeerMaterial((Texture2D)TropicsSceneDef.previewTexture);
+            LoopSceneDef.portalMaterial = R2API.StageRegistration.MakeBazaarSeerMaterial((Texture2D)LoopSceneDef.previewTexture);
             simuSceneDef.portalMaterial = R2API.StageRegistration.MakeBazaarSeerMaterial((Texture2D)simuSceneDef.previewTexture);
 
             var tropicsTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/MusicTrackDefs/muFULLSong02.asset");
@@ -96,7 +96,7 @@ namespace Tropics.Content
             {
                 yield return null;
             }
-            var tropicsBossTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/Base/Common/MusicTrackDefs/muSong16.asset");
+            var tropicsBossTrackDefRequest = Addressables.LoadAssetAsync<MusicTrackDef>("RoR2/DLC2/Common/muSong_Lakes&HabitatBoss.asset");
             while (!tropicsBossTrackDefRequest.IsDone)
             {
                 yield return null;

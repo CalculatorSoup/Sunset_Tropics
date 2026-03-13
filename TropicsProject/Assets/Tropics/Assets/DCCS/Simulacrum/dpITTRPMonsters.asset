@@ -46,15 +46,4 @@ MonoBehaviour:
         _address: 851f234056d389b42822523d1be6a167
         _useDirectReference: 0
         _canLoadFromCatalog: 0
-    - dccs: {fileID: 11400000, guid: ee7515862f814f945bd5e9e052837638, type: 2}
-      familyDccs:
-        _asset: {fileID: 0}
-        _address: 
-        _useDirectReference: 0
-      weight: 1
-      requiredExpansions:
-      - _asset: {fileID: 0}
-        _address: 234e83997deed274291470be69e7662e
-        _useDirectReference: 0
-        _canLoadFromCatalog: 0
     includedIfNoConditionsMet: []

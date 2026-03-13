@@ -37,7 +37,7 @@ MonoBehaviour:
   filterOutOfBazaar: 0
   shouldIncludeInLogbook: 1
   loreToken: WORM_TROPICS_LORE
-  dioramaPrefab: {fileID: 919132149155446097, guid: 79a3ce94d740fad49a976cac362af816, type: 3}
+  dioramaPrefab: {fileID: 4032884139825489656, guid: e8f6232567a247040ae6b8b9fa7e656d, type: 3}
   dioramaPrefabAddress:
     m_AssetGUID: 
     m_SubObjectName: 

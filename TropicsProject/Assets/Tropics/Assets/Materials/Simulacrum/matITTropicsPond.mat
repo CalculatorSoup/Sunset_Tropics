@@ -11,8 +11,6 @@ Material:
   m_Shader: {fileID: 4800000, guid: 7e718f9a771798b47bc22ddc8fe70637, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
-  - _BUMPLARGE_ON
-  - _DEPTHFOG_ON
   - _DISPLACEMENTMODE_WAVE
   - _DISPLACEMENT_ON
   - _DISTORTIONQUALITY_LOW
@@ -91,12 +89,12 @@ Material:
     - _Depth: 50
     - _DetailNormalMapScale: 1
     - _DisplacementMode: 1
-    - _Distortion: 100
+    - _Distortion: 50
     - _DistortionQuality: 1
     - _DstBlend: 0
     - _EdgeFade: 0.5
-    - _EnableFog: 1
-    - _EnableLargeBump: 1
+    - _EnableFog: 0
+    - _EnableLargeBump: 0
     - _FOAM: 1
     - _FoamSize: 0.5
     - _Frequency: 0.97

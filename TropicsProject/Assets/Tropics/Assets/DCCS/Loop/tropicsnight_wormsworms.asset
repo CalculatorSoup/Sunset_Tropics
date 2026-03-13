@@ -23,7 +23,7 @@ MonoBehaviour:
   requiredExpansion: {fileID: 0}
   nameToken: WORM_TROPICSNIGHT_NAME
   subtitleToken: WORM_TROPICSNIGHT_SUBTITLE
-  previewTexture: {fileID: 2800000, guid: b7669d6288e04934c997391d8d6c74d1, type: 3}
+  previewTexture: {fileID: 2800000, guid: 3beaa8b844afb8049aedf54ae6f59c63, type: 3}
   previewTextureReference:
     m_AssetGUID: 
     m_SubObjectName: 
@@ -37,7 +37,7 @@ MonoBehaviour:
   filterOutOfBazaar: 0
   shouldIncludeInLogbook: 1
   loreToken: WORM_TROPICSNIGHT_LORE
-  dioramaPrefab: {fileID: 919132149155446097, guid: 79a3ce94d740fad49a976cac362af816, type: 3}
+  dioramaPrefab: {fileID: 4032884139825489656, guid: 606ecd74becc7984ba050912f5713c25, type: 3}
   dioramaPrefabAddress:
     m_AssetGUID: 
     m_SubObjectName: 

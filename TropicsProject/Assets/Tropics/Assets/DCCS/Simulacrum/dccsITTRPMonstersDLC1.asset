@@ -56,24 +56,3 @@ MonoBehaviour:
         _useDirectReference: 0
         _canLoadFromCatalog: 0
     selectionWeight: 2
-  - name: Basic Monsters
-    cards:
-    - spawnCard:
-        _asset: {fileID: 0}
-        _address: c9201e5991ba1934e82a6a3f2c165721
-        _useDirectReference: 0
-      selectionWeight: 1
-      spawnDistance: 0
-      preventOverhead: 0
-      minimumStageCompletions: 0
-      requiredUnlockableDef:
-        _asset: {fileID: 0}
-        _address: 
-        _useDirectReference: 0
-        _canLoadFromCatalog: 0
-      forbiddenUnlockableDef:
-        _asset: {fileID: 0}
-        _address: 
-        _useDirectReference: 0
-        _canLoadFromCatalog: 0
-    selectionWeight: 3
