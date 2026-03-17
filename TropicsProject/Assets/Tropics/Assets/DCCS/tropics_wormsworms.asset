@@ -34,7 +34,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
   portalSelectionMessageString: WORM_BAZAAR_SEER_TROPICS
-  filterOutOfBazaar: 0
+  filterOutOfBazaar: 1
   shouldIncludeInLogbook: 1
   loreToken: WORM_TROPICS_LORE
   dioramaPrefab: {fileID: 4032884139825489656, guid: e8f6232567a247040ae6b8b9fa7e656d, type: 3}

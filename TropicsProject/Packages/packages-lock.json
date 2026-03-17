@@ -189,11 +189,11 @@
       "url": "https://packages.unity.com"
     },
     "jace-locationsofprecipitation": {
-      "version": "https://github.com/JaceDaDorito/jace-locationsofprecipitation.git",
+      "version": "https://github.com/JaceDaDorito/jace-locationsofprecipitation.git#b3a4dbc99305a90e7455dbc69940f7eee0054886",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "a923a5119403e0c9ad557aef2559e3edbb73d9d5"
+      "hash": "b3a4dbc99305a90e7455dbc69940f7eee0054886"
     },
     "kingenderbrine-lobbyskinsfix": {
       "version": "file:LobbySkinsFix",

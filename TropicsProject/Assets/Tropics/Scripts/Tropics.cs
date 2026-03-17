@@ -47,7 +47,7 @@ namespace Tropics
 
         public const string Name = "Sunset_Tropics";
 
-        public const string Version = "1.0.1";
+        public const string Version = "1.0.3";
 
         public const string GUID = Author + "." + Name;
 
@@ -212,6 +212,7 @@ namespace Tropics
                     if (chest != null)
                     {
                         GameObject newChest = UnityEngine.GameObject.Instantiate(scalingChestPrefab, chest.transform.position, chest.transform.rotation, chestHolder.transform);
+                        newChest.AddComponent<DestroyOnDisable>();
                         NetworkServer.Spawn(newChest);
                         GameObject.Destroy(chest);
                     }
