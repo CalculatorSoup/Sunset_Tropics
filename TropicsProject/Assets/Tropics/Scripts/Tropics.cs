@@ -47,7 +47,7 @@ namespace Tropics
 
         public const string Name = "Sunset_Tropics";
 
-        public const string Version = "1.0.3";
+        public const string Version = "1.0.4";
 
         public const string GUID = Author + "." + Name;
 
@@ -98,36 +98,55 @@ namespace Tropics
 
         public void InitializeBazaarSeerValues(RoR2.Run run)
         {
-            
+
             //filtering variants out of bazaar manually to prevent them appearing when they should not. vanilla does not do this
-            
+            RoR2.SceneDef regular = RoR2.SceneCatalog.GetSceneDefFromSceneName(RegularSceneName);
+            RoR2.SceneDef loop = RoR2.SceneCatalog.GetSceneDefFromSceneName(LoopSceneName);
+            RoR2.SceneDef simulacrum = RoR2.SceneCatalog.GetSceneDefFromSceneName(SimuSceneName);
+            List<RoR2.SceneDef> sceneDefs = new List<RoR2.SceneDef> { regular, loop, simulacrum };
+
             if (Tropics.enableRegular.Value && Tropics.enableVariant.Value && Tropics.loopExclusiveVariant.Value && !Tropics.swapVariantPlaces.Value)
             {
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(RegularSceneName).filterOutOfBazaar = false;
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(LoopSceneName).filterOutOfBazaar = true;
+                regular.filterOutOfBazaar = false;
+                loop.filterOutOfBazaar = true;
             }
             else if (Tropics.enableRegular.Value && Tropics.enableVariant.Value && Tropics.loopExclusiveVariant.Value && Tropics.swapVariantPlaces.Value)
             {
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(RegularSceneName).filterOutOfBazaar = true;
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(LoopSceneName).filterOutOfBazaar = false;
+                regular.filterOutOfBazaar = true;
+                loop.filterOutOfBazaar = false;
             }
-            
 
-            // change music depending on whether DLC3 is enabled
+            // change music depending on whether DLC3 and the DLC Music config setting are enabled.
+            // this is probably the worst possible way to do this.
+            // buh.
+
+            /*
+            var newmusic = Addressables.LoadAssetAsync<RoR2.MusicTrackDef>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_DLC3.muGameplayDLC3_02_P_Map_asset).WaitForCompletion();
+            var regularmusic = Addressables.LoadAssetAsync<RoR2.MusicTrackDef>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_Base_Common_MusicTrackDefs.muFULLSong02_asset).WaitForCompletion();
+
             var dlc3 = Addressables.LoadAssetAsync<RoR2.ExpansionManagement.ExpansionDef>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_DLC3.DLC3_asset).WaitForCompletion();
-            if (RoR2.Run.instance.IsExpansionEnabled(dlc3))
+            if (RoR2.Run.instance.IsExpansionEnabled(dlc3) && !ModChecks.IsMusicManager.enabled && musicSwapping.Value)
             {
-                var newmusic = Addressables.LoadAssetAsync<RoR2.MusicTrackDef>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_DLC3.muGameplayDLC3_02_P_Map_asset).WaitForCompletion();
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(RegularSceneName).mainTrack = newmusic;
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(LoopSceneName).mainTrack = newmusic;
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(SimuSceneName).mainTrack = newmusic;
-            } else
-            {
-                var regularmusic = Addressables.LoadAssetAsync<RoR2.MusicTrackDef>(RoR2BepInExPack.GameAssetPathsBetter.RoR2_Base_Common_MusicTrackDefs.muFULLSong02_asset).WaitForCompletion();
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(RegularSceneName).mainTrack = regularmusic;
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(LoopSceneName).mainTrack = regularmusic;
-                RoR2.SceneCatalog.GetSceneDefFromSceneName(SimuSceneName).mainTrack = regularmusic;
+                foreach (var sceneDef in sceneDefs)
+                {
+                    if (sceneDef.mainTrack == regularmusic || sceneDef.mainTrack == newmusic)
+                    {
+                        sceneDef.mainTrack = newmusic;
+                    }
+                }
+
             }
+            else if (!ModChecks.IsMusicManager.enabled && musicSwapping.Value)
+            {
+                foreach (var sceneDef in sceneDefs)
+                {
+                    if (sceneDef.mainTrack == regularmusic || sceneDef.mainTrack == newmusic)
+                    {
+                        sceneDef.mainTrack = regularmusic;
+                    }
+                }
+            }
+            */
 
         }
 
@@ -209,12 +228,14 @@ namespace Tropics
                 {
                     GameObject chest = chestObjects[i];
                     GameObject chestHolder = chestHolders[i];
+
                     if (chest != null)
                     {
                         GameObject newChest = UnityEngine.GameObject.Instantiate(scalingChestPrefab, chest.transform.position, chest.transform.rotation, chestHolder.transform);
                         newChest.AddComponent<DestroyOnDisable>();
                         NetworkServer.Spawn(newChest);
                         GameObject.Destroy(chest);
+
                     }
                 }
 

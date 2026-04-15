@@ -44,6 +44,24 @@ namespace Tropics.ModChecks
         }
     }
 
+    public class IsMusicManager
+    {
+        private static bool? _enabled;
+
+        public static bool enabled
+        {
+            get
+            {
+                if (_enabled == null)
+                {
+                    _enabled = (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.TeamMoonstorm.MSU") && BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("groovesalad.MusicManager"));
+                }
+                return (bool)_enabled;
+            }
+        }
+    }
+
+
     public class IsSandswept
     {
         private static bool? _enabled;

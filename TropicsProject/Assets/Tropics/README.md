@@ -20,6 +20,8 @@ Sunset Tropics also comes with 2 variants:
   - Sunset Tropics - Enabled (true/false)
   - Midnight Tropics - Enabled, Exclusive to Looping, Swap Places with Sunset Tropics (true/false)
   - Simulacrum Variant - Enabled, Enabled on Stage 1 (true/false)
+  - Underwater music muffling (true/false)
+  - DLC music (true/false)
   - Modded enemy toggles
 - Modded enemies can appear if their respective mod is enabled
   * [EnemiesReturns](https://thunderstore.io/package/Risky_Sleeps/EnemiesReturns/): Sand Crab, Lynx Totem, Colossus

@@ -1,3 +1,10 @@
+# 1.0.4
+* Music no longer switches depending on whether Alloyed Collective is enabled
+  * Previously it was Into the Doldrums when playing without DLC3, or Swamplified Mizzle with DLC3. Now it's always Into the Doldrums
+  * This was changed since my implementation of switching music tracks conflicted with soundtrack mods (sorry!!)
+* Increased distance required for the clam geysers (cleysers) to get culled. Should hopefully fix them almost always being invisible on low settings
+* Slightly reduced selection weight for triple drone shops (5 -> 3)
+
 # 1.0.3
 * Unused legendary chests are now removed instead of remaining in the scene (bandaid fix for an issue where Lost and Found would show the contents of invisible chests in this map)
 
