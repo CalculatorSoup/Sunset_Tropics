@@ -1,3 +1,10 @@
+# 1.0.5
+* Updated the water gravity script to fix a couple issues:
+  * Enemies that spawned underwater would sometimes not be affected by water gravity
+  * Enemies launched by Breaching Fin would float upward until they rose above the water
+* Fixed Lemurian Eggs not spawning if Artifact of Devotion is enabled
+* Fixed a spot where interactables could spawn halfway inside one of the giant sea shells
+
 # 1.0.4
 * Music no longer switches depending on whether Alloyed Collective is enabled
   * Previously it was Into the Doldrums when playing without DLC3, or Swamplified Mizzle with DLC3. Now it's always Into the Doldrums

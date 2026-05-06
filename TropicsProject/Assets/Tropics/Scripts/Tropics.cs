@@ -47,7 +47,7 @@ namespace Tropics
 
         public const string Name = "Sunset_Tropics";
 
-        public const string Version = "1.0.4";
+        public const string Version = "1.0.5";
 
         public const string GUID = Author + "." + Name;
 
