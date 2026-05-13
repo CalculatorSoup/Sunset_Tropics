@@ -171,7 +171,7 @@ MonoBehaviour:
         _address: 844c7cf8f1b6c8b4aa77e082386174b9
         _useDirectReference: 0
       selectionWeight: 1
-      spawnDistance: 0
+      spawnDistance: 2
       preventOverhead: 0
       minimumStageCompletions: 0
       requiredUnlockableDef:

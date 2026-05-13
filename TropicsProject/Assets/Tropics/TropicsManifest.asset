@@ -87,7 +87,7 @@ MonoBehaviour:
   Name: Sunset_Tropics
   Description: An alternate Stage 4 map set on a tropical archipelago littered with
     comically large sea shells. Also includes a loop variant and a Simulacrum variant!
-  Version: 1.0.5
+  Version: 1.0.7
   Dependencies:
   - {fileID: 11400000, guid: d7d8ed5ac59df8acbbc4983f1ebba079, type: 2}
   - {fileID: 11400000, guid: 98480314448d120c05e373472456e52b, type: 2}
@@ -131,10 +131,10 @@ MonoBehaviour:
   StagingPaths:
   - <MSUBuildPath>
   assetBundles:
-  - assetBundleName: TropicsAssets
+  - assetBundleName: sunsettropicsassets
     assets:
     - {fileID: 102900000, guid: 57e01be159990304c8929b668e5f10ad, type: 3}
-  - assetBundleName: TropicsScenes
+  - assetBundleName: sunsettropicsscenes
     assets:
     - {fileID: 102900000, guid: 12da786a95146624a8ac95bb84d4a8ad, type: 3}
     - {fileID: 102900000, guid: 3375ae71923d4f9499c4f2de3a137a20, type: 3}

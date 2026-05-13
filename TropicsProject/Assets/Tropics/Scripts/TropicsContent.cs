@@ -25,8 +25,8 @@ namespace Tropics.Content
     public static class TropicsContent
     {
 
-        internal const string ScenesAssetBundleFileName = "TropicsScenes";
-        internal const string AssetsAssetBundleFileName = "TropicsAssets";
+        internal const string ScenesAssetBundleFileName = "sunsettropicsscenes";
+        internal const string AssetsAssetBundleFileName = "sunsettropicsassets";
 
         private static AssetBundle _scenesAssetBundle;
         private static AssetBundle _assetsAssetBundle;

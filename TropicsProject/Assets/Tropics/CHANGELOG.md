@@ -1,3 +1,9 @@
+# 1.0.7
+* Attempted fix for the game maybe sometimes not loading (renamed the mod's asset bundles)
+
+# 1.0.6
+* Increased spawn distance for Hermit Crabs (Standard -> Far)
+
 # 1.0.5
 * Updated the water gravity script to fix a couple issues:
   * Enemies that spawned underwater would sometimes not be affected by water gravity
