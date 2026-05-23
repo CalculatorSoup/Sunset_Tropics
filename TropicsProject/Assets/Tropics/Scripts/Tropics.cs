@@ -47,7 +47,7 @@ namespace Tropics
 
         public const string Name = "Sunset_Tropics";
 
-        public const string Version = "1.0.7";
+        public const string Version = "1.1.0";
 
         public const string GUID = Author + "." + Name;
 
@@ -209,6 +209,8 @@ namespace Tropics
         {
             if (newScene.name == RegularSceneName || newScene.name == LoopSceneName || newScene.name == SimuSceneName)
             {
+                AmbienceSetup();
+                
                 //swap legendary chests to a custom prefab that scales price with time
                 GameObject[] chestObjects = {
                     GameObject.Find("Gold Chest 1/GoldChest(Clone)"),
@@ -239,6 +241,24 @@ namespace Tropics
                     }
                 }
 
+            }
+        }
+
+        private void AmbienceSetup()
+        {
+            GameObject ambience = GameObject.Find("SceneInfo/Ambience");
+            AkBank bank = ambience.GetComponent<AkBank>();
+            AkAmbient[] ambientList = ambience.GetComponents<AkAmbient>();
+            AkAmbient ambient1 = ambientList[0];
+            AkAmbient ambient2 = ambientList[1];
+            if (bank)
+            {
+                WwiseBankReference goldshoreSound = Addressables.LoadAssetAsync<WwiseBankReference>("Wwise/41B59E6B-581C-42BD-9BA9-F19B9E37E52B.asset").WaitForCompletion();
+                WwiseEventReference startGoldshoreSound = Addressables.LoadAssetAsync<WwiseEventReference>("Wwise/79061ECA-0D69-4D32-888E-D91FD3998633.asset").WaitForCompletion();
+                WwiseEventReference stopSound = Addressables.LoadAssetAsync<WwiseEventReference>("Wwise/6F2ADD1C-BD55-431F-A62F-80CCD5F9631D.asset").WaitForCompletion();
+                bank.data.WwiseObjectReference = goldshoreSound;
+                ambient1.data.WwiseObjectReference = startGoldshoreSound;
+                ambient2.data.WwiseObjectReference = stopSound;
             }
         }
 

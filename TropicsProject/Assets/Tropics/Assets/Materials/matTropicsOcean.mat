@@ -11,18 +11,18 @@ Material:
   m_Shader: {fileID: 4800000, guid: 7e718f9a771798b47bc22ddc8fe70637, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
+  - _DEPTHFOG_ON
   - _DISPLACEMENTMODE_WAVE
   - _DISPLACEMENT_ON
-  - _DISTORTIONQUALITY_LOW
+  - _DISTORTIONQUALITY_HIGH
   - _EMISSION
   - _FOAM_ON
   - _NORMALMAP
-  - _REFLECTIONTYPE_NONE
-  - _WORLDSPACE_ON
+  - _REFLECTIONTYPE_CUBEMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -37,7 +37,7 @@ Material:
         m_Scale: {x: 15, y: 15}
         m_Offset: {x: 0, y: 0}
     - _Cube:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8900000, guid: 6378fcb0fd37eff44b347a1689b59fb2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: fde0e9823f367604892bc00666d963b7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9c9cddd1b594de344b41e84da3301ea2, type: 3}
         m_Scale: {x: 0.1, y: 0.1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -87,17 +87,17 @@ Material:
     - _BumpScale: 1
     - _BumpStrength: 1
     - _Cutoff: 0.5
-    - _Depth: 50
+    - _Depth: 70
     - _DetailNormalMapScale: 1
     - _DisplacementMode: 1
     - _Distortion: 50
-    - _DistortionQuality: 1
+    - _DistortionQuality: 0
     - _DstBlend: 0
     - _EdgeFade: 0.5
-    - _EnableFog: 0
+    - _EnableFog: 1
     - _EnableLargeBump: 0
     - _FOAM: 1
-    - _FoamSize: 0.1
+    - _FoamSize: 0.2
     - _Frequency: 0.97
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -106,8 +106,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Reflection: 0.5
-    - _ReflectionType: 0
+    - _Reflection: 0.3
+    - _ReflectionType: 3
     - _RimPower: 10
     - _Smoothing: 1
     - _Smoothness: 2.6
@@ -118,15 +118,15 @@ Material:
     - _Steepness: 0.54
     - _Tess: 1
     - _UVSec: 0
-    - _WorldSpace: 1
+    - _WorldSpace: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0, g: 1, b: 0.9910369, a: 1}
-    - _CubeColor: {r: 0, g: 0, b: 0, a: 1}
-    - _DepthColor: {r: 0, g: 0, b: 0, a: 1}
+    - _CubeColor: {r: 0.13679248, g: 1, b: 0.5186965, a: 1}
+    - _DepthColor: {r: 0, g: 0.6039216, b: 0.4, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.44713423, g: 0.5318042, b: 0.6037736, a: 1}
-    - _SpecColor: {r: 0.5921569, g: 0.45490196, b: 0.35686275, a: 1}
+    - _FoamColor: {r: 0.45852616, g: 0.6037736, b: 0.6023939, a: 1}
+    - _SpecColor: {r: 0.7889068, g: 0.8018868, b: 0.47281063, a: 1}
     - _Speeds: {r: -0.3, g: 0.3, b: 0.4, a: -0.4}
     - _SpeedsLarge: {r: -0.1, g: 0.1, b: 0.1, a: -0.1}
     - _WDirectionAB: {r: -0.17, g: 0.55, b: -0.62, a: -0.25}

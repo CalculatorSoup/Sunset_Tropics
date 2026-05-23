@@ -10,7 +10,8 @@ Material:
   m_Name: matTropicsPlanks
   m_Shader: {fileID: 4800000, guid: 892febee97f6cdf439912ad371711811, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - CUTOUT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -45,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5425f62ef78df1c42aa79b4bcb002796, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -81,7 +82,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f44846fbc76ce024d965273f4263466e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1d2db9cbd066137498b0efb4127770e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -118,7 +119,7 @@ Material:
     - _BlueChannelSmoothness: 0
     - _BumpScale: 1
     - _ColorsOn: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DecalLayer: 1
     - _Depth: 0.2
@@ -129,8 +130,8 @@ Material:
     - _EliteBrightnessMax: 1
     - _EliteBrightnessMin: 0
     - _EliteIndex: 0
-    - _EmPower: 0
-    - _EnableCutout: 0
+    - _EmPower: 1
+    - _EnableCutout: 1
     - _FEON: 0
     - _Fade: 1
     - _FadeBias: 0
@@ -154,7 +155,7 @@ Material:
     - _LimbRemovalOn: 0
     - _Metallic: 0
     - _Mode: 0
-    - _NormalStrength: 1
+    - _NormalStrength: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PrintBias: 0
@@ -179,7 +180,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmColor: {r: 0.3726415, g: 0.96930474, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

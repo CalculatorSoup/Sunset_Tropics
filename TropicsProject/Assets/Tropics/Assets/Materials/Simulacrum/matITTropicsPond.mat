@@ -17,7 +17,7 @@ Material:
   - _EMISSION
   - _FOAM_ON
   - _NORMALMAP
-  - _REFLECTIONTYPE_NONE
+  - _REFLECTIONTYPE_CUBEMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _Cube:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8900000, guid: 222e34cb43132d041991972e77505c26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: fde0e9823f367604892bc00666d963b7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9c9cddd1b594de344b41e84da3301ea2, type: 3}
         m_Scale: {x: 0.1, y: 0.1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -106,7 +106,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Reflection: 0.5
-    - _ReflectionType: 0
+    - _ReflectionType: 3
     - _RimPower: 10
     - _Smoothing: 0
     - _Smoothness: 2.6
@@ -121,11 +121,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0, g: 1, b: 0.9910369, a: 1}
-    - _CubeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CubeColor: {r: 0.4, g: 0.7764706, b: 1, a: 1}
     - _DepthColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.28235295, g: 0.28235295, b: 0.28235295, a: 1}
-    - _SpecColor: {r: 0.54901963, g: 0.49019608, b: 0.42745098, a: 1}
+    - _SpecColor: {r: 0.35686275, g: 0.57254905, b: 0.5921569, a: 1}
     - _Speeds: {r: -0.3, g: 0.3, b: 0.4, a: -0.4}
     - _SpeedsLarge: {r: -0.1, g: 0.1, b: 0.1, a: -0.1}
     - _WDirectionAB: {r: -0.17, g: 0.55, b: -0.62, a: -0.25}

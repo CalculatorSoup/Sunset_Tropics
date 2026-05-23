@@ -69,14 +69,14 @@ namespace Tropics.Content
             {
                 contentPack.unlockableDefs.Add(assets);
             }));
-
+            /*
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<Sprite[]>)((assets) =>
             {
-                TropicsSceneDefPreviewSprite = assets.First(a => a.name == "texTropicsScenePreview");
-                LoopSceneDefPreviewSprite = assets.First(a => a.name == "texTropicsNightScenePreview");
-                simuSceneDefPreviewSprite = assets.First(a => a.name == "texTropicsScenePreview");
+                TropicsSceneDefPreviewSprite = assets.First(a => a.name == "texSunsetTropicsScenePreview");
+                LoopSceneDefPreviewSprite = assets.First(a => a.name == "texMidnightTropicsScenePreview");
+                simuSceneDefPreviewSprite = assets.First(a => a.name == "texSunsetTropicsScenePreview");
             }));
-
+            */
             yield return LoadAllAssetsAsync(_assetsAssetBundle, progress, (Action<SceneDef[]>)((assets) =>
             {
                 SceneDefs = assets;
